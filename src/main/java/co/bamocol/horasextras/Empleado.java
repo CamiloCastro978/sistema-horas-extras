@@ -8,18 +8,16 @@ public class Empleado {
     private String cedula;
     private String nombre;
     private String cargo;
-    private LocalTime horaEntrada;
-    private LocalTime horaSalida;
+    private Jornada jornada;
     private boolean activo;
 
     // Constructor
     public Empleado(String cedula, String nombre, String cargo,
-            LocalTime horaEntrada, LocalTime horaSalida) {
+            Jornada jornada) {
         this.cedula = cedula;
         this.nombre = nombre;
         this.cargo = cargo;
-        this.horaEntrada = horaEntrada;
-        this.horaSalida = horaSalida;
+        this.jornada = jornada;
         this.activo = true;
     }
 
@@ -36,13 +34,7 @@ public class Empleado {
         return cargo;
     }
 
-    public LocalTime getHoraEntrada() {
-        return horaEntrada;
-    }
-
-    public LocalTime getHoraSalida() {
-        return horaSalida;
-    }
+    public Jornada getJornada() { return jornada; }
 
     public boolean isActivo() {
         return activo;
@@ -57,18 +49,12 @@ public class Empleado {
         this.cargo = cargo;
     }
 
-    public void setHoraEntrada(LocalTime horaEntrada) {
-        this.horaEntrada = horaEntrada;
-    }
-
-    public void setHoraSalida(LocalTime horaSalida) {
-        this.horaSalida = horaSalida;
-    }
+    public void setJornada(Jornada jornada) { this.jornada = jornada; }
 
     // Representación en texto
     @Override
     public String toString() {
         return cedula + " - " + nombre + " (" + cargo + ") " +
-                horaEntrada + " a " + horaSalida;
+                jornada;
     }
 }
